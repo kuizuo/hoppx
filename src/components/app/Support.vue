@@ -8,7 +8,7 @@
   >
     <template #body>
       <div class="flex flex-col space-y-2">
-        <SmartItem
+        <!-- <SmartItem
           :icon="IconBook"
           :label="t('app.documentation')"
           to="https://docs.hoppscotch.io"
@@ -17,7 +17,7 @@
           active
           blank
           @click="hideModal()"
-        />
+        /> -->
         <SmartItem
           :icon="IconZap"
           :label="t('app.keyboard_shortcuts')"
@@ -46,38 +46,15 @@
           active
           @click="hideModal()"
         />
-        <SmartItem
-          :icon="IconDiscord"
-          :label="t('app.join_discord_community')"
-          to="https://hoppscotch.io/discord"
-          blank
-          :description="t('support.community')"
-          :info-icon="IconChevronRight"
-          active
-          @click="hideModal()"
-        />
-        <SmartItem
-          :icon="IconTwitter"
-          :label="t('app.twitter')"
-          to="https://hoppscotch.io/twitter"
-          blank
-          :description="t('support.twitter')"
-          :info-icon="IconChevronRight"
-          active
-          @click="hideModal()"
-        />
       </div>
     </template>
   </SmartModal>
 </template>
 
 <script setup lang="ts">
-import IconTwitter from "~icons/brands/twitter"
-import IconDiscord from "~icons/brands/discord"
 import IconGitHub from "~icons/hopp/github"
 import IconGift from "~icons/lucide/gift"
 import IconZap from "~icons/lucide/zap"
-import IconBook from "~icons/lucide/book"
 import IconChevronRight from "~icons/lucide/chevron-right"
 import { invokeAction } from "@helpers/actions"
 import { useI18n } from "@composables/i18n"

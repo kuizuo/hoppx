@@ -219,7 +219,8 @@
     "page_not_found": "This page could not be found",
     "script_fail": "Could not execute pre-request script",
     "something_went_wrong": "Something went wrong",
-    "test_script_fail": "Could not execute post-request script"
+    "test_script_fail": "Could not execute post-request script",
+    "login_not_supported": "Login is not supported at this time"
   },
   "export": {
     "as_json": "Export as JSON",
@@ -514,10 +515,8 @@
       "back": "Go back to previous page",
       "documentation": "Go to Documentation page",
       "forward": "Go forward to next page",
-      "graphql": "Go to GraphQL page",
       "profile": "Go to Profile page",
-      "realtime": "Go to Realtime page",
-      "rest": "Go to REST page",
+      "test": "Go to Test page",
       "settings": "Go to Settings page",
       "title": "Navigation"
     },

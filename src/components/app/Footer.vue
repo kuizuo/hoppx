@@ -40,9 +40,9 @@
               ref="tippyActions"
               class="flex flex-col focus:outline-none"
               tabindex="0"
-              @keyup.d="documentation.$el.click()"
-              @keyup.s="shortcuts.$el.click()"
-              @keyup.c="chat.$el.click()"
+              @keyup.d="documentation!.$el.click()"
+              @keyup.s="shortcuts!.$el.click()"
+              @keyup.c="chat!.$el.click()"
               @keyup.escape="hide()"
             >
               <SmartItem
@@ -66,49 +66,11 @@
                   }
                 "
               />
-              <SmartItem
-                :icon="IconGift"
-                :label="`${t('app.whats_new')}`"
-                to="https://docs.hoppscotch.io/changelog"
-                blank
-                @click="hide()"
-              />
-              <SmartItem
-                :icon="IconActivity"
-                :label="t('app.status')"
-                to="https://status.hoppscotch.io"
-                blank
-                @click="hide()"
-              />
               <hr />
               <SmartItem
                 :icon="IconGithub"
                 :label="`${t('app.github')}`"
                 to="https://github.com/kuizuo/hoppx"
-                blank
-                @click="hide()"
-              />
-              <SmartItem
-                :icon="IconTwitter"
-                :label="`${t('app.twitter')}`"
-                to="https://hoppscotch.io/twitter"
-                blank
-                @click="hide()"
-              />
-              <SmartItem
-                :icon="IconUserPlus"
-                :label="`${t('app.invite')}`"
-                @click="
-                  () => {
-                    showShare = true
-                    hide()
-                  }
-                "
-              />
-              <SmartItem
-                :icon="IconLock"
-                :label="`${t('app.terms_and_privacy')}`"
-                to="https://docs.hoppscotch.io/privacy"
                 blank
                 @click="hide()"
               />
@@ -185,12 +147,7 @@ import IconColumns from "~icons/lucide/columns"
 import IconSidebarOpen from "~icons/lucide/sidebar-open"
 import IconHelpCircle from "~icons/lucide/help-circle"
 import IconBook from "~icons/lucide/book"
-import IconGift from "~icons/lucide/gift"
-import IconActivity from "~icons/lucide/activity"
 import IconGithub from "~icons/lucide/github"
-import IconTwitter from "~icons/lucide/twitter"
-import IconUserPlus from "~icons/lucide/user-plus"
-import IconLock from "~icons/lucide/lock"
 import { defineActionHandler } from "~/helpers/actions"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"

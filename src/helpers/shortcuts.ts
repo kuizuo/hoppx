@@ -104,16 +104,8 @@ export default [
         label: "shortcut.navigation.forward",
       },
       {
-        keys: [getPlatformAlternateKey(), "R"],
-        label: "shortcut.navigation.rest",
-      },
-      {
-        keys: [getPlatformAlternateKey(), "Q"],
-        label: "shortcut.navigation.graphql",
-      },
-      {
-        keys: [getPlatformAlternateKey(), "W"],
-        label: "shortcut.navigation.realtime",
+        keys: [getPlatformAlternateKey(), "T"],
+        label: "shortcut.navigation.test",
       },
       {
         keys: [getPlatformAlternateKey(), "S"],
@@ -233,35 +225,11 @@ export const fuse = [
     tags: ["keyboard", "shortcuts"],
   },
   {
-    keys: [getPlatformAlternateKey(), "R"],
-    label: "shortcut.navigation.rest",
-    action: "navigation.jump.rest",
+    keys: [getPlatformAlternateKey(), "T"],
+    label: "shortcut.navigation.test",
+    action: "navigation.jump.test",
     icon: IconArrowRight,
     tags: ["rest", "jump", "page", "navigation", "go"],
-  },
-  {
-    keys: [getPlatformAlternateKey(), "Q"],
-    label: "shortcut.navigation.graphql",
-    action: "navigation.jump.graphql",
-    icon: IconArrowRight,
-    tags: ["graphql", "jump", "page", "navigation", "go"],
-  },
-  {
-    keys: [getPlatformAlternateKey(), "W"],
-    label: "shortcut.navigation.realtime",
-    action: "navigation.jump.realtime",
-    icon: IconArrowRight,
-    tags: [
-      "realtime",
-      "jump",
-      "page",
-      "navigation",
-      "websocket",
-      "socket",
-      "mqtt",
-      "sse",
-      "go",
-    ],
   },
   {
     keys: [getPlatformAlternateKey(), "S"],
