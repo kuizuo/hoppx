@@ -24,7 +24,6 @@ import { watch, ref, Ref, onMounted, onBeforeUnmount } from "vue"
 import { javascriptLanguage } from "@codemirror/lang-javascript"
 import { xmlLanguage } from "@codemirror/lang-xml"
 import { jsonLanguage } from "@codemirror/lang-json"
-import { GQLLanguage } from "@hoppscotch/codemirror-lang-graphql"
 import { html } from "@codemirror/legacy-modes/mode/xml"
 import { shell } from "@codemirror/legacy-modes/mode/shell"
 import { yaml } from "@codemirror/legacy-modes/mode/yaml"
@@ -135,8 +134,6 @@ const getLanguage = (langMime: string): Language | null => {
     return jsonLanguage
   } else if (langMime === "application/javascript") {
     return javascriptLanguage
-  } else if (langMime === "graphql") {
-    return GQLLanguage
   } else if (langMime === "application/xml") {
     return xmlLanguage
   } else if (langMime === "htmlmixed") {

@@ -1,7 +1,0 @@
-subscription ShortcodeCreated {
-  myShortcodesCreated {
-    id
-    request
-    createdOn
-  }
-}

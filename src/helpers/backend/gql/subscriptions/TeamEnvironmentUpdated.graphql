@@ -1,8 +1,0 @@
-subscription TeamEnvironmentUpdated ($teamID: ID!) {
-  teamEnvironmentUpdated(teamID: $teamID) {
-    id
-    teamID
-    name
-    variables
-  }
-}

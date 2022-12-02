@@ -1,3 +1,0 @@
-mutation DeleteTeamEnvironment($id: ID!){
-  deleteTeamEnvironment (id: $id )
-}
