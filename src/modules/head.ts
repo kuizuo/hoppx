@@ -7,7 +7,7 @@ export default <HoppModule>{
     const head = createHead({
       title: `${APP_INFO.name} • ${APP_INFO.shortDescription}`,
       titleTemplate(title) {
-        return title === "Hoppscotch" ? title : `${title} • Hoppscotch`
+        return title === "Hoppx" ? title : `Hoppx`
       },
     })
 

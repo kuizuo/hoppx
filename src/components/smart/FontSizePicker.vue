@@ -48,12 +48,13 @@
 import IconCircleDot from "~icons/lucide/circle-dot"
 import IconCircle from "~icons/lucide/circle"
 import IconType from "~icons/lucide/type"
-import { HoppFontSizes, HoppFontSize, applySetting } from "~/store/settings"
+import { HoppFontSizes, HoppFontSize, useSettingsStore } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
 import { ref } from "vue"
 
 const t = useI18n()
+const settingsStore = useSettingsStore()
 
 const fontSizes = HoppFontSizes
 const active = useSetting("FONT_SIZE")
@@ -63,7 +64,7 @@ const getFontSizeName = (size: HoppFontSize) => {
 }
 
 const setActiveFont = (size: HoppFontSize) => {
-  applySetting("FONT_SIZE", size)
+  settingsStore.applySetting("FONT_SIZE", size)
 }
 
 // Template refs

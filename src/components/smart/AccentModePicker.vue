@@ -29,15 +29,16 @@ import IconCircleDot from "~icons/lucide/circle-dot"
 import {
   HoppAccentColors,
   HoppAccentColor,
-  applySetting,
+  useSettingsStore,
 } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 
+const settingsStore = useSettingsStore()
 const accentColors = HoppAccentColors
 const active = useSetting("THEME_COLOR")
 
 const setActiveColor = (color: HoppAccentColor) => {
   document.documentElement.setAttribute("data-accent", color)
-  applySetting("THEME_COLOR", color)
+  settingsStore.applySetting("THEME_COLOR", color)
 }
 </script>

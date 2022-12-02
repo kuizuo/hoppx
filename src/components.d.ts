@@ -54,6 +54,9 @@ declare module '@vue/runtime-core' {
     IconLucideInfo: typeof import('~icons/lucide/info')['default']
     IconLucideLoader: typeof import('~icons/lucide/loader')['default']
     IconLucideSearch: typeof import('~icons/lucide/search')['default']
+    IconLucideUser: typeof import('~icons/lucide/user')['default']
+    ProfilePicture: typeof import('./components/profile/Picture.vue')['default']
+    ProfileShortcode: typeof import('./components/profile/Shortcode.vue')['default']
     SmartAccentModePicker: typeof import('./components/smart/AccentModePicker.vue')['default']
     SmartAnchor: typeof import('./components/smart/Anchor.vue')['default']
     SmartAutoComplete: typeof import('./components/smart/AutoComplete.vue')['default']
@@ -79,6 +82,8 @@ declare module '@vue/runtime-core' {
     SmartToggle: typeof import('./components/smart/Toggle.vue')['default']
     SmartWindow: typeof import('./components/smart/Window.vue')['default']
     SmartWindows: typeof import('./components/smart/Windows.vue')['default']
+    TabPrimary: typeof import('./components/tab/Primary.vue')['default']
+    TabSecondary: typeof import('./components/tab/Secondary.vue')['default']
     Tippy: typeof import('vue-tippy')['Tippy']
   }
 }

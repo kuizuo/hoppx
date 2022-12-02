@@ -35,7 +35,7 @@ import {
   setLocalConfig,
   getLocalConfig,
   removeLocalConfig,
-} from "~/newstore/localpersistence"
+} from "~/store/localpersistence"
 
 export type HoppUser = User & {
   provider?: string

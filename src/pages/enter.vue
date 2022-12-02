@@ -11,7 +11,7 @@ import { defineComponent } from "vue"
 import { useI18n } from "@composables/i18n"
 import { initializeFirebase } from "~/helpers/fb"
 import { isSignInWithEmailLink, signInWithEmailLink } from "~/helpers/fb/auth"
-import { getLocalConfig, removeLocalConfig } from "~/newstore/localpersistence"
+import { getLocalConfig, removeLocalConfig } from "~/store/localpersistence"
 
 export default defineComponent({
   setup() {

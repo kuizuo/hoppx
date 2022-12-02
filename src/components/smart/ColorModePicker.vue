@@ -20,17 +20,18 @@ import IconMonitor from "~icons/lucide/monitor"
 import IconSun from "~icons/lucide/sun"
 import IconCloud from "~icons/lucide/cloud"
 import IconMoon from "~icons/lucide/moon"
-import { applySetting, HoppBgColor, HoppBgColors } from "~/store/settings"
+import { useSettingsStore, HoppBgColor, HoppBgColors } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
 
 const t = useI18n()
+const settingsStore = useSettingsStore()
 
 const colors = HoppBgColors
 const active = useSetting("BG_COLOR")
 
 const setBGMode = (color: HoppBgColor) => {
-  applySetting("BG_COLOR", color)
+  settingsStore.applySetting("BG_COLOR", color)
 }
 
 const getIcon = (color: HoppBgColor) => {

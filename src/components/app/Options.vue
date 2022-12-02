@@ -96,28 +96,12 @@
         <SmartItem
           :icon="IconGithub"
           :label="`${t('app.github')}`"
-          to="https://github.com/hoppscotch/hoppscotch"
+          to="https://github.com/kuizuo/hoppx"
           blank
           :description="t('support.github')"
           :info-icon="IconChevronRight"
           active
           @click="hideModal()"
-        />
-        <SmartItem
-          :icon="IconMessageCircle"
-          :label="t('app.chat_with_us')"
-          :description="t('support.chat')"
-          :info-icon="IconChevronRight"
-          active
-          @click="chatWithUs()"
-        />
-        <SmartItem
-          :icon="IconUserPlus"
-          :label="`${t('app.invite')}`"
-          :description="t('shortcut.miscellaneous.invite')"
-          :info-icon="IconChevronRight"
-          active
-          @click="expandInvite()"
         />
         <SmartItem
           v-if="navigatorShare"
@@ -146,13 +130,10 @@ import IconLock from "~icons/lucide/lock"
 import IconDiscord from "~icons/brands/discord"
 import IconTwitter from "~icons/brands/twitter"
 import IconGithub from "~icons/hopp/github"
-import IconMessageCircle from "~icons/lucide/message-circle"
-import IconUserPlus from "~icons/lucide/user-plus"
 import IconShare2 from "~icons/lucide/share-2"
 import IconChevronRight from "~icons/lucide/chevron-right"
 import { useSetting } from "@composables/settings"
 import { defineActionHandler } from "~/helpers/actions"
-import { showChat } from "@modules/crisp"
 import { useI18n } from "@composables/i18n"
 
 const t = useI18n()
@@ -182,11 +163,6 @@ const emit = defineEmits<{
   (e: "hide-modal"): void
 }>()
 
-const chatWithUs = () => {
-  showChat()
-  hideModal()
-}
-
 const expandNavigation = () => {
   EXPAND_NAVIGATION.value = !EXPAND_NAVIGATION.value
   hideModal()
@@ -195,10 +171,6 @@ const expandNavigation = () => {
 const expandCollection = () => {
   SIDEBAR.value = !SIDEBAR.value
   hideModal()
-}
-
-const expandInvite = () => {
-  showShare.value = true
 }
 
 const nativeShare = () => {

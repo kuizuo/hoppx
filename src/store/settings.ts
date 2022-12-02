@@ -1,6 +1,5 @@
 import { has } from "lodash-es"
 import { defineStore } from "pinia"
-import { pinia } from "~/modules/pinia"
 
 export const HoppBgColors = ["system", "light", "dark", "black"] as const
 
@@ -82,16 +81,3 @@ export const useSettingsStore = defineStore("app-settings-store", {
   },
   persist: {},
 })
-
-export const settingsStore = useSettingsStore(pinia)
-
-export function toggleSetting<K extends keyof SettingsType>(settingKey: K) {
-  settingsStore.toggleSetting(settingKey)
-}
-
-export function applySetting<K extends keyof SettingsType>(
-  settingKey: K,
-  value: SettingsType[K]
-) {
-  settingsStore.applySetting(settingKey, value)
-}

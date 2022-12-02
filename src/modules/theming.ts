@@ -3,7 +3,7 @@ import { App, computed, reactive, Ref, watch } from "vue"
 import type { HoppBgColor } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 import { HoppModule } from "."
-import { hoppLocalConfigStorage } from "~/newstore/localpersistence"
+import { hoppLocalConfigStorage } from "~/store/localpersistence"
 
 export type HoppColorMode = {
   preference: HoppBgColor

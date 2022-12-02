@@ -65,11 +65,12 @@ import { RouterView, useRouter } from "vue-router"
 import { useSetting } from "@composables/settings"
 import { defineActionHandler } from "~/helpers/actions"
 import { hookKeybindingsListener } from "~/helpers/keybindings"
-import { applySetting } from "~/store/settings"
-import { getLocalConfig, setLocalConfig } from "~/newstore/localpersistence"
+import { useSettingsStore } from "~/store/settings"
+import { getLocalConfig, setLocalConfig } from "~/store/localpersistence"
 import { useToast } from "~/composables/toast"
 import { useI18n } from "~/composables/i18n"
 
+const settingsStore = useSettingsStore()
 const router = useRouter()
 
 const showSearch = ref(false)
@@ -175,19 +176,19 @@ defineActionHandler("navigation.jump.profile", () => {
 })
 
 defineActionHandler("settings.theme.system", () => {
-  applySetting("BG_COLOR", "system")
+  settingsStore.applySetting("BG_COLOR", "system")
 })
 
 defineActionHandler("settings.theme.light", () => {
-  applySetting("BG_COLOR", "light")
+  settingsStore.applySetting("BG_COLOR", "light")
 })
 
 defineActionHandler("settings.theme.dark", () => {
-  applySetting("BG_COLOR", "dark")
+  settingsStore.applySetting("BG_COLOR", "dark")
 })
 
 defineActionHandler("settings.theme.black", () => {
-  applySetting("BG_COLOR", "black")
+  settingsStore.applySetting("BG_COLOR", "black")
 })
 
 hookKeybindingsListener()

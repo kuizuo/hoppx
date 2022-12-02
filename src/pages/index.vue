@@ -5,10 +5,10 @@
       <!-- <HttpRequestOptions /> -->
     </template>
     <template #secondary>
-      <HttpResponse />
+      <!-- <HttpResponse /> -->
     </template>
     <template #sidebar>
-      <HttpSidebar />
+      <!-- <HttpSidebar /> -->
     </template>
   </AppPaneLayout>
 </template>

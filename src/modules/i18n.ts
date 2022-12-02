@@ -9,6 +9,7 @@ import languages from "../../languages.json"
 
 import en from "../../locales/en.json"
 import { throwError } from "~/helpers/functional/error"
+import { getLocalConfig, setLocalConfig } from "~/store/localpersistence"
 
 /*
   In context of this file, we have 2 main kinds of things.
@@ -42,7 +43,7 @@ type LanguagesDef = {
   dir?: "ltr" | "rtl" // Text Orientation (defaults to 'ltr')
 }
 
-const FALLBACK_LANG_CODE = "en"
+const FALLBACK_LANG_CODE = "cn"
 
 // TypeScript cannot understand dir is restricted to "ltr" or "rtl" yet, hence assertion
 export const APP_LANGUAGES: LanguagesDef[] = languages as LanguagesDef[]
@@ -63,7 +64,7 @@ let i18nInstance: I18n<any, any, any> | null = null
 const resolveCurrentLocale = () =>
   pipe(
     // Resolve from locale and make sure it is in languages
-    window.localStorage.getItem("locale"),
+    getLocalConfig("locale"),
     O.fromNullable,
     O.filter((locale) =>
       pipe(
@@ -112,7 +113,7 @@ export const changeAppLanguage = async (locale: string) => {
   // TODO: Look into the type issues here
   i18nInstance.global.locale.value = locale
 
-  window.localStorage.setItem("locale", locale)
+  setLocalConfig("locale", locale)
 }
 
 export default <HoppModule>{

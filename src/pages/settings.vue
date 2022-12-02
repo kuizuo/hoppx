@@ -60,7 +60,7 @@
               {{ t("settings.experiments_notice") }}
               <SmartAnchor
                 class="link"
-                to="https://github.com/hoppscotch/hoppscotch/issues/new/choose"
+                to="https://github.com/kuizuo/hoppx/issues/new/choose"
                 blank
                 :label="t('app.contact_us')"
               />.
@@ -115,7 +115,7 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from "vue"
-import { applySetting, toggleSetting } from "~/store/settings"
+import { useSettingsStore } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
 import { useColorMode } from "@composables/theming"
@@ -123,6 +123,8 @@ import { usePageHead } from "@composables/head"
 
 const t = useI18n()
 const colorMode = useColorMode()
+const settingsStore = useSettingsStore()
+const { applySetting, toggleSetting } = settingsStore
 
 usePageHead({
   title: computed(() => t("navigation.settings")),

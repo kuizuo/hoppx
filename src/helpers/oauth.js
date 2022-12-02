@@ -2,7 +2,7 @@ import {
   getLocalConfig,
   setLocalConfig,
   removeLocalConfig,
-} from "~/newstore/localpersistence"
+} from "~/store/localpersistence"
 
 const redirectUri = `${window.location.origin}/`
 
