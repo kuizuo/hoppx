@@ -1,5 +1,4 @@
 import { BehaviorSubject, Subject } from "rxjs"
-import { logHoppRequestRunToAnalytics } from "../fb/analytics"
 import { SIOClientV2, SIOClientV3, SIOClientV4, SIOClient } from "./SIOClients"
 import { SIOClientVersion } from "~/newstore/SocketIOSession"
 
@@ -112,10 +111,6 @@ export class SIOConnection {
     } catch (error) {
       this.handleError(error, "CONNECTION")
     }
-
-    logHoppRequestRunToAnalytics({
-      platform: "socketio",
-    })
   }
 
   private handleError(error: unknown, type: SIOErrorType) {

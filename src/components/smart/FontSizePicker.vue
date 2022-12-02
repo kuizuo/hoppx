@@ -48,7 +48,7 @@
 import IconCircleDot from "~icons/lucide/circle-dot"
 import IconCircle from "~icons/lucide/circle"
 import IconType from "~icons/lucide/type"
-import { HoppFontSizes, HoppFontSize, applySetting } from "~/newstore/settings"
+import { HoppFontSizes, HoppFontSize, applySetting } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
 import { ref } from "vue"

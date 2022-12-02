@@ -13,7 +13,7 @@ import ExtensionStrategy, {
 } from "./strategies/ExtensionStrategy"
 import { HoppRESTResponse } from "./types/HoppRESTResponse"
 import { EffectiveHoppRESTRequest } from "./utils/EffectiveURL"
-import { settingsStore } from "~/newstore/settings"
+import { settingsStore } from "~/store/settings"
 
 export type NetworkResponse = AxiosResponse<any> & {
   config?: {

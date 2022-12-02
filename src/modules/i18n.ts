@@ -9,7 +9,6 @@ import languages from "../../languages.json"
 
 import en from "../../locales/en.json"
 import { throwError } from "~/helpers/functional/error"
-import { getLocalConfig, setLocalConfig } from "~/newstore/localpersistence"
 
 /*
   In context of this file, we have 2 main kinds of things.
@@ -64,7 +63,7 @@ let i18nInstance: I18n<any, any, any> | null = null
 const resolveCurrentLocale = () =>
   pipe(
     // Resolve from locale and make sure it is in languages
-    getLocalConfig("locale"),
+    window.localStorage.getItem("locale"),
     O.fromNullable,
     O.filter((locale) =>
       pipe(
@@ -113,7 +112,7 @@ export const changeAppLanguage = async (locale: string) => {
   // TODO: Look into the type issues here
   i18nInstance.global.locale.value = locale
 
-  setLocalConfig("locale", locale)
+  window.localStorage.setItem("locale", locale)
 }
 
 export default <HoppModule>{
@@ -138,7 +137,7 @@ export default <HoppModule>{
     const currentLocale = resolveCurrentLocale()
     changeAppLanguage(currentLocale)
 
-    setLocalConfig("locale", currentLocale)
+    window.localStorage.setItem("locale", currentLocale)
   },
   onBeforeRouteChange(to, _, router) {
     // Convert old locale path format to new format

@@ -13,7 +13,7 @@ import {
   replaceEnvironments,
   setGlobalEnvVariables,
 } from "~/newstore/environments"
-import { getSettingSubject, settingsStore } from "~/newstore/settings"
+import { getSettingSubject, settingsStore } from "~/store/settings"
 
 /**
  * Used locally to prevent infinite loop when environment sync update

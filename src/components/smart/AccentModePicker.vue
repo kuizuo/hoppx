@@ -30,7 +30,7 @@ import {
   HoppAccentColors,
   HoppAccentColor,
   applySetting,
-} from "~/newstore/settings"
+} from "~/store/settings"
 import { useSetting } from "@composables/settings"
 
 const accentColors = HoppAccentColors

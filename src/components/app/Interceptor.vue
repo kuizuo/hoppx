@@ -37,7 +37,7 @@
 import IconChrome from "~icons/brands/chrome"
 import IconFirefox from "~icons/brands/firefox"
 import { computed } from "vue"
-import { applySetting, toggleSetting } from "~/newstore/settings"
+import { applySetting, toggleSetting } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
 import { useReadonlyStream } from "@composables/stream"

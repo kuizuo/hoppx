@@ -20,7 +20,7 @@ import IconMonitor from "~icons/lucide/monitor"
 import IconSun from "~icons/lucide/sun"
 import IconCloud from "~icons/lucide/cloud"
 import IconMoon from "~icons/lucide/moon"
-import { applySetting, HoppBgColor, HoppBgColors } from "~/newstore/settings"
+import { applySetting, HoppBgColor, HoppBgColors } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
 

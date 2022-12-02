@@ -5,7 +5,7 @@ import * as TE from "fp-ts/TaskEither"
 import { cloneDeep } from "lodash-es"
 import { NetworkResponse, NetworkStrategy } from "../network"
 import { decodeB64StringToArrayBuffer } from "../utils/b64"
-import { settingsStore } from "~/newstore/settings"
+import { settingsStore } from "~/store/settings"
 
 let cancelSource = axios.CancelToken.source()
 

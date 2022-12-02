@@ -12,7 +12,7 @@ import {
   updateDoc,
 } from "firebase/firestore"
 import { currentUser$ } from "./auth"
-import { getSettingSubject, settingsStore } from "~/newstore/settings"
+import { getSettingSubject, settingsStore } from "~/store/settings"
 import {
   GQLHistoryEntry,
   graphqlHistoryStore,

@@ -22,16 +22,6 @@
           }"
           @click="ZEN_MODE = !ZEN_MODE"
         />
-        <tippy interactive trigger="click" theme="popover">
-          <ButtonSecondary
-            v-tippy="{ theme: 'tooltip' }"
-            :title="t('settings.interceptor')"
-            :icon="IconShieldCheck"
-          />
-          <template #content>
-            <AppInterceptor />
-          </template>
-        </tippy>
       </div>
       <div class="flex">
         <tippy
@@ -205,7 +195,6 @@ import IconZap from "~icons/lucide/zap"
 import IconShare2 from "~icons/lucide/share-2"
 import IconColumns from "~icons/lucide/columns"
 import IconSidebarOpen from "~icons/lucide/sidebar-open"
-import IconShieldCheck from "~icons/lucide/shield-check"
 import IconHelpCircle from "~icons/lucide/help-circle"
 import IconBook from "~icons/lucide/book"
 import IconMessageCircle from "~icons/lucide/message-circle"
@@ -217,6 +206,7 @@ import IconUserPlus from "~icons/lucide/user-plus"
 import IconLock from "~icons/lucide/lock"
 import { defineActionHandler } from "~/helpers/actions"
 import { showChat } from "@modules/crisp"
+import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
 import { useReadonlyStream } from "@composables/stream"
 import { currentUser$ } from "~/helpers/fb/auth"
@@ -236,11 +226,11 @@ defineActionHandler("modals.share.toggle", () => {
   showShare.value = !showShare.value
 })
 
-const EXPAND_NAVIGATION = ref(true)
-const SIDEBAR = ref(true)
-const ZEN_MODE = ref(false)
-const COLUMN_LAYOUT = ref(true)
-const SIDEBAR_ON_LEFT = ref(true)
+const EXPAND_NAVIGATION = useSetting("EXPAND_NAVIGATION")
+const SIDEBAR = useSetting("SIDEBAR")
+const ZEN_MODE = useSetting("ZEN_MODE")
+const COLUMN_LAYOUT = useSetting("COLUMN_LAYOUT")
+const SIDEBAR_ON_LEFT = useSetting("SIDEBAR_ON_LEFT")
 
 const navigatorShare = !!navigator.share
 

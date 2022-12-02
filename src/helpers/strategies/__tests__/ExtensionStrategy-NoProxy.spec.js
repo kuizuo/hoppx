@@ -10,7 +10,7 @@ jest.mock("../../utils/b64", () => ({
   decodeB64StringToArrayBuffer: jest.fn((data) => `${data}-converted`),
 }))
 
-jest.mock("~/newstore/settings", () => {
+jest.mock("~/store/settings", () => {
   return {
     __esModule: true,
     settingsStore: {

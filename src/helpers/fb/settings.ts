@@ -6,7 +6,7 @@ import {
   setDoc,
 } from "firebase/firestore"
 import { currentUser$ } from "./auth"
-import { applySetting, settingsStore, SettingsType } from "~/newstore/settings"
+import { applySetting, settingsStore, SettingsType } from "~/store/settings"
 
 /**
  * Used locally to prevent infinite loop when settings sync update

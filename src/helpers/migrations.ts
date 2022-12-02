@@ -1,4 +1,4 @@
-import { settingsStore, applySetting } from "~/newstore/settings"
+import { settingsStore, applySetting } from "~/store/settings"
 
 /*
  * This file contains all the migrations we have to perform overtime in various (persisted)

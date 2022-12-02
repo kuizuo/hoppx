@@ -1,7 +1,7 @@
 import { usePreferredDark, useStorage } from "@vueuse/core"
 import { App, computed, reactive, Ref, watch } from "vue"
-import type { HoppBgColor } from "~/newstore/settings"
-import { useSettingStatic } from "@composables/settings"
+import type { HoppBgColor } from "~/store/settings"
+import { useSetting } from "@composables/settings"
 import { HoppModule } from "."
 import { hoppLocalConfigStorage } from "~/newstore/localpersistence"
 
@@ -11,7 +11,7 @@ export type HoppColorMode = {
 }
 
 const applyColorMode = (app: App) => {
-  const [settingPref] = useSettingStatic("BG_COLOR")
+  const settingPref = useSetting("BG_COLOR")
 
   const currentLocalPreference = useStorage<HoppBgColor>(
     "nuxt-color-mode",
@@ -57,7 +57,7 @@ const applyColorMode = (app: App) => {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const applyAccentColor = (_app: App) => {
-  const [pref] = useSettingStatic("THEME_COLOR")
+  const pref = useSetting("THEME_COLOR")
 
   watch(
     pref,
@@ -70,7 +70,7 @@ const applyAccentColor = (_app: App) => {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const applyFontSize = (_app: App) => {
-  const [pref] = useSettingStatic("FONT_SIZE")
+  const pref = useSetting("FONT_SIZE")
 
   watch(
     pref,

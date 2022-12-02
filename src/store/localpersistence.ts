@@ -5,11 +5,12 @@ import * as O from "fp-ts/Option"
 import { pipe } from "fp-ts/function"
 
 import {
+  settingsStore,
   defaultSettings,
   applySetting,
   HoppAccentColor,
   HoppBgColor,
-} from "../store/settings"
+} from "./settings"
 // import {
 //   restHistoryStore,
 //   graphqlHistoryStore,
@@ -18,30 +19,7 @@ import {
 //   translateToNewRESTHistory,
 //   translateToNewGQLHistory,
 // } from "./history"
-import {
-  restCollectionStore,
-  graphqlCollectionStore,
-  setGraphqlCollections,
-  setRESTCollections,
-} from "./collections"
-import {
-  replaceEnvironments,
-  environments$,
-  addGlobalEnvVariable,
-  setGlobalEnvVariables,
-  globalEnv$,
-  setSelectedEnvironmentIndex,
-  selectedEnvironmentIndex$,
-} from "./environments"
-import {
-  getDefaultRESTRequest,
-  restRequest$,
-  setRESTRequest,
-} from "./RESTSession"
-import { WSRequest$, setWSRequest } from "./WebSocketSession"
-import { SIORequest$, setSIORequest } from "./SocketIOSession"
-import { SSERequest$, setSSERequest } from "./SSESession"
-import { MQTTRequest$, setMQTTRequest } from "./MQTTSession"
+
 import { bulkApplyLocalState, localStateStore } from "./localstate"
 import { StorageLike } from "@vueuse/core"
 
@@ -114,6 +92,20 @@ function setupLocalStatePersistence() {
 
   localStateStore.subject$.subscribe((state) => {
     window.localStorage.setItem("localState", JSON.stringify(state))
+  })
+}
+
+function setupSettingsPersistence() {
+  const settingsData = JSON.parse(
+    window.localStorage.getItem("settings") || "{}"
+  )
+
+  if (settingsData) {
+    bulkApplySettings(settingsData)
+  }
+
+  settingsStore.$subscribe((settings) => {
+    window.localStorage.setItem("settings", JSON.stringify(settings))
   })
 }
 

@@ -2,7 +2,7 @@ import axios from "axios"
 import axiosStrategy from "../AxiosStrategy"
 
 jest.mock("axios")
-jest.mock("~/newstore/settings", () => {
+jest.mock("~/store/settings", () => {
   return {
     __esModule: true,
     settingsStore: {

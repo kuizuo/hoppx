@@ -13,7 +13,7 @@ import {
   setRESTCollections,
   setGraphqlCollections,
 } from "~/newstore/collections"
-import { getSettingSubject, settingsStore } from "~/newstore/settings"
+import { getSettingSubject, settingsStore } from "~/store/settings"
 
 type CollectionFlags = "collectionsGraphql" | "collections"
 

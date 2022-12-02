@@ -80,6 +80,8 @@ specifiers:
   openapi-types: ^12.0.0
   paho-mqtt: ^1.1.0
   path: ^0.12.7
+  pinia: ^2.0.27
+  pinia-plugin-persistedstate: ^3.0.1
   postman-collection: ^4.1.4
   prettier: ^2.8.0
   process: ^0.11.10
@@ -172,6 +174,8 @@ dependencies:
   nprogress: 0.2.0
   paho-mqtt: 1.1.0
   path: 0.12.7
+  pinia: 2.0.27_mgnvym7yiazkylwwogi5r767ue
+  pinia-plugin-persistedstate: 3.0.1_pinia@2.0.27
   postman-collection: 4.1.6
   process: 0.11.10
   qs: 6.11.0
@@ -7435,6 +7439,32 @@ packages:
     resolution: {integrity: sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==}
     engines: {node: '>=4'}
     dev: true
+
+  /pinia-plugin-persistedstate/3.0.1_pinia@2.0.27:
+    resolution: {integrity: sha512-WRNWtR4v8StJqBQH+Qiz88SGnlr4wvEyh7wtA+fYEVLoIOnpZ0v4FICvUcC8eUkAIvQL3n6/Ew2yryw7okazvA==}
+    peerDependencies:
+      pinia: ^2.0.0
+    dependencies:
+      pinia: 2.0.27_mgnvym7yiazkylwwogi5r767ue
+    dev: false
+
+  /pinia/2.0.27_mgnvym7yiazkylwwogi5r767ue:
+    resolution: {integrity: sha512-nOnXP0OFeL8R4WjAHsterU+11vptda643gH02xKNtSCDPiRzVfRYodOLihLDoa0gL1KKuQKV+KOzEgdt3YvqEw==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.4.5
+      typescript: 4.9.3
+      vue: 3.2.45
+      vue-demi: 0.13.11_vue@3.2.45
+    dev: false
 
   /pinkie-promise/1.0.0:
     resolution: {integrity: sha512-5mvtVNse2Ml9zpFKkWBpGsTPwm3DKhs+c95prO/F6E7d6DN0FPqxs6LONpLNpyD7Iheb7QN4BbUoKJgo+DnkQA==}

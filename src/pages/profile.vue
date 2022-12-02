@@ -306,7 +306,7 @@ import { useSetting } from "@composables/settings"
 import { useColorMode } from "@composables/theming"
 import { usePageHead } from "@composables/head"
 
-import { toggleSetting } from "~/newstore/settings"
+import { toggleSetting } from "~/store/settings"
 import ShortcodeListAdapter from "~/helpers/shortcodes/ShortcodeListAdapter"
 import { deleteShortcode as backendDeleteShortcode } from "~/helpers/backend/mutations/Shortcode"
 

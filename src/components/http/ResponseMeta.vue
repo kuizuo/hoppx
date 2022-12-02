@@ -29,7 +29,7 @@
         >
           {{ t("helpers.network_fail") }}
         </span>
-        <AppInterceptor class="p-2 border rounded border-dividerLight" />
+        <!-- <AppInterceptor class="p-2 border rounded border-dividerLight" /> -->
       </div>
       <div
         v-if="response.type === 'script_fail'"

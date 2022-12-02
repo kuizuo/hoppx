@@ -1,5 +1,6 @@
 {
-  "name": "hopx",
+  "name": "hoppx",
+  "description": "仿 Hoppscotch 工具网站模板",
   "private": true,
   "version": "0.1.0",
   "scripts": {
@@ -55,6 +56,8 @@
     "nprogress": "^0.2.0",
     "paho-mqtt": "^1.1.0",
     "path": "^0.12.7",
+    "pinia": "^2.0.27",
+    "pinia-plugin-persistedstate": "^3.0.1",
     "postman-collection": "^4.1.4",
     "process": "^0.11.10",
     "qs": "^6.10.3",
