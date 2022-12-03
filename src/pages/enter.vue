@@ -9,9 +9,6 @@
 <script lang="ts">
 import { defineComponent } from "vue"
 import { useI18n } from "@composables/i18n"
-import { initializeFirebase } from "~/helpers/fb"
-import { isSignInWithEmailLink, signInWithEmailLink } from "~/helpers/fb/auth"
-import { getLocalConfig, removeLocalConfig } from "~/store/localpersistence"
 
 export default defineComponent({
   setup() {
@@ -25,35 +22,8 @@ export default defineComponent({
       error: null,
     }
   },
-  beforeMount() {
-    initializeFirebase()
-  },
-  async mounted() {
-    if (isSignInWithEmailLink(window.location.href)) {
-      this.signingInWithEmail = true
-
-      let email = getLocalConfig("emailForSignIn")
-
-      if (!email) {
-        email = window.prompt(
-          "Please provide your email for confirmation"
-        ) as string
-      }
-
-      await signInWithEmailLink(email, window.location.href)
-        .then(() => {
-          removeLocalConfig("emailForSignIn")
-          this.$router.push({ path: "/" })
-        })
-        .catch((e) => {
-          this.signingInWithEmail = false
-          this.error = e.message
-        })
-        .finally(() => {
-          this.signingInWithEmail = false
-        })
-    }
-  },
+  beforeMount() {},
+  async mounted() {},
 })
 </script>
 

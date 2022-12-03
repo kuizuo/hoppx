@@ -122,16 +122,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue"
-import {
-  signInUserWithGoogle,
-  signInUserWithGithub,
-  signInUserWithMicrosoft,
-  setProviderInfo,
-  currentUser$,
-  signInWithEmail,
-  linkWithFBCredentialFromAuthError,
-  getGithubCredentialFromResult,
-} from "~/helpers/fb/auth"
 import IconGithub from "~icons/auth/github"
 import IconGoogle from "~icons/auth/google"
 import IconEmail from "~icons/auth/email"
@@ -141,6 +131,14 @@ import { setLocalConfig } from "~/store/localpersistence"
 import { useStreamSubscriber } from "@composables/stream"
 import { useToast } from "@composables/toast"
 import { useI18n } from "@composables/i18n"
+
+const signInUserWithGoogle = () => {}
+const signInUserWithGithub = () => {}
+const signInUserWithMicrosoft = () => {}
+const setProviderInfo = () => {}
+const signInWithEmail = () => {}
+const linkWithFBCredentialFromAuthError = () => {}
+const getGithubCredentialFromResult = () => {}
 
 export default defineComponent({
   props: {
@@ -174,9 +172,7 @@ export default defineComponent({
     }
   },
   mounted() {
-    this.subscribeToStream(currentUser$, (user) => {
-      if (user) this.hideModal()
-    })
+
   },
   methods: {
     showLoginSuccess() {

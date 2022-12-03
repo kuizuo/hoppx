@@ -78,7 +78,7 @@
                 class="flex px-4 py-2 opacity-50"
                 @dblclick="
                   () => {
-                    showDeveloperOptionModal()
+                    // showDeveloperOptionModal()
                     hide()
                   }
                 "
@@ -151,8 +151,6 @@ import IconGithub from "~icons/lucide/github"
 import { defineActionHandler } from "~/helpers/actions"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
-import { useReadonlyStream } from "@composables/stream"
-import { currentUser$ } from "~/helpers/fb/auth"
 import { TippyComponent } from "vue-tippy"
 import SmartItem from "@components/smart/Item.vue"
 
@@ -178,8 +176,6 @@ const SIDEBAR_ON_LEFT = useSetting("SIDEBAR_ON_LEFT")
 
 const navigatorShare = !!navigator.share
 
-const currentUser = useReadonlyStream(currentUser$, null)
-
 watch(
   () => ZEN_MODE.value,
   () => {
@@ -198,12 +194,6 @@ const nativeShare = () => {
       .catch(console.error)
   } else {
     // fallback
-  }
-}
-
-const showDeveloperOptionModal = () => {
-  if (currentUser.value) {
-    showDeveloperOptions.value = true
   }
 }
 

@@ -54,23 +54,9 @@
           </section>
           <section>
             <h4 class="font-semibold text-secondaryDark">
-              {{ t("settings.experiments") }}
+              {{ t("settings.layout") }}
             </h4>
-            <div class="my-1 text-secondaryLight">
-              {{ t("settings.experiments_notice") }}
-              <SmartAnchor
-                class="link"
-                to="https://github.com/kuizuo/hoppx/issues/new/choose"
-                blank
-                :label="t('app.contact_us')"
-              />.
-            </div>
             <div class="py-4 space-y-4">
-              <div class="flex items-center">
-                <SmartToggle :on="TELEMETRY_ENABLED" @change="showConfirmModal">
-                  {{ t("settings.telemetry") }}
-                </SmartToggle>
-              </div>
               <div class="flex items-center">
                 <SmartToggle
                   :on="EXPAND_NAVIGATION"
@@ -97,24 +83,11 @@
         </div>
       </div>
     </div>
-    <SmartConfirmModal
-      :show="confirmRemove"
-      :title="`${t('confirm.remove_telemetry')} ${t(
-        'settings.telemetry_helps_us'
-      )}`"
-      @hide-modal="confirmRemove = false"
-      @resolve="
-        () => {
-          toggleSetting('TELEMETRY_ENABLED')
-          confirmRemove = false
-        }
-      "
-    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from "vue"
+import { computed, watch } from "vue"
 import { useSettingsStore } from "~/store/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
@@ -131,21 +104,13 @@ usePageHead({
 })
 
 const ACCENT_COLOR = useSetting("THEME_COLOR")
-const TELEMETRY_ENABLED = useSetting("TELEMETRY_ENABLED")
 const EXPAND_NAVIGATION = useSetting("EXPAND_NAVIGATION")
 const SIDEBAR_ON_LEFT = useSetting("SIDEBAR_ON_LEFT")
 const ZEN_MODE = useSetting("ZEN_MODE")
 
-const confirmRemove = ref(false)
-
 watch(ZEN_MODE, (mode) => {
   applySetting("EXPAND_NAVIGATION", !mode)
 })
-
-const showConfirmModal = () => {
-  if (TELEMETRY_ENABLED.value) confirmRemove.value = true
-  else toggleSetting("TELEMETRY_ENABLED")
-}
 
 const getColorModeName = (colorMode: string) => {
   switch (colorMode) {

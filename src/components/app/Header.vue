@@ -26,7 +26,7 @@
           class="rounded hover:bg-primaryDark focus-visible:bg-primaryDark"
           @click="invokeAction('modals.search.toggle')"
         />
-        <!-- <ButtonSecondary
+        <ButtonSecondary
           v-tippy="{ theme: 'tooltip', allowHTML: true }"
           :title="`${
             mdAndLarger ? t('support.title') : t('app.options')
@@ -34,7 +34,7 @@
           :icon="IconLifeBuoy"
           class="rounded hover:bg-primaryDark focus-visible:bg-primaryDark"
           @click="invokeAction('modals.support.toggle')"
-        /> -->
+        />
         <!-- <ButtonSecondary
           v-if="currentUser === null"
           :icon="IconUploadCloud"
@@ -128,7 +128,7 @@
                     :shortcut="['S']"
                     @click="hide()"
                   />
-                  <FirebaseLogout
+                  <BaseLogout
                     ref="logout"
                     :shortcut="['L']"
                     @confirm-logout="hide()"
@@ -141,7 +141,7 @@
       </div>
     </header>
     <AppAnnouncement v-if="!network.isOnline" />
-    <FirebaseLogin :show="showLogin" @hide-modal="showLogin = false" />
+    <BaseLogin :show="showLogin" @hide-modal="showLogin = false" />
   </div>
 </template>
 
@@ -151,15 +151,13 @@ import IconUser from "~icons/lucide/user"
 import IconSettings from "~icons/lucide/settings"
 import IconDownload from "~icons/lucide/download"
 import IconSearch from "~icons/lucide/search"
-// import IconLifeBuoy from "~icons/lucide/life-buoy"
+import IconLifeBuoy from "~icons/lucide/life-buoy"
 // import IconUploadCloud from "~icons/lucide/upload-cloud"
 // import IconUserPlus from "~icons/lucide/user-plus"
 import { breakpointsTailwind, useBreakpoints, useNetwork } from "@vueuse/core"
 import { pwaDefferedPrompt, installPWA } from "@modules/pwa"
-import { probableUser$ } from "@helpers/fb/auth"
 import { useI18n } from "@composables/i18n"
 import { useToast } from "@composables/toast"
-import { useReadonlyStream } from "@composables/stream"
 import { invokeAction } from "@helpers/actions"
 
 const t = useI18n()
@@ -180,7 +178,7 @@ const mdAndLarger = breakpoints.greater("md")
 
 const network = reactive(useNetwork())
 
-const currentUser = useReadonlyStream(probableUser$, null)
+const currentUser = ref<any | null>(null)
 
 // Template refs
 const tippyActions = ref<any | null>(null)
@@ -190,6 +188,6 @@ const logout = ref<any | null>(null)
 
 const login = () => {
   toast.error(`${t("error.login_not_supported")}`)
-  return 
+  return
 }
 </script>

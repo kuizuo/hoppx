@@ -22,7 +22,6 @@ import { ref } from "vue"
 import IconLogOut from "~icons/lucide/log-out"
 import { useToast } from "@composables/toast"
 import { useI18n } from "@composables/i18n"
-import { signOutUser } from "~/helpers/fb/auth"
 
 defineProps({
   outline: {
@@ -47,7 +46,7 @@ const t = useI18n()
 
 const logout = async () => {
   try {
-    await signOutUser()
+    // await signOutUser()
     toast.success(`${t("auth.logged_out")}`)
   } catch (e) {
     console.error(e)

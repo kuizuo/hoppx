@@ -8,7 +8,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppAnnouncement: typeof import('./components/app/Announcement.vue')['default']
-    AppDeveloperOptions: typeof import('./components/app/DeveloperOptions.vue')['default']
     AppFooter: typeof import('./components/app/Footer.vue')['default']
     AppFuse: typeof import('./components/app/Fuse.vue')['default']
     AppHeader: typeof import('./components/app/Header.vue')['default']
@@ -23,10 +22,10 @@ declare module '@vue/runtime-core' {
     AppShortcutsPrompt: typeof import('./components/app/ShortcutsPrompt.vue')['default']
     AppSidenav: typeof import('./components/app/Sidenav.vue')['default']
     AppSupport: typeof import('./components/app/Support.vue')['default']
+    BaseLogin: typeof import('./components/base/Login.vue')['default']
+    BaseLogout: typeof import('./components/base/Logout.vue')['default']
     ButtonPrimary: typeof import('./components/button/Primary.vue')['default']
     ButtonSecondary: typeof import('./components/button/Secondary.vue')['default']
-    FirebaseLogin: typeof import('./components/firebase/Login.vue')['default']
-    FirebaseLogout: typeof import('./components/firebase/Logout.vue')['default']
     IconLucideChevronRight: typeof import('~icons/lucide/chevron-right')['default']
     IconLucideInbox: typeof import('~icons/lucide/inbox')['default']
     IconLucideInfo: typeof import('~icons/lucide/info')['default']
