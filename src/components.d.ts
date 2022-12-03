@@ -58,6 +58,7 @@ declare module '@vue/runtime-core' {
     IconLucideLoader: typeof import('~icons/lucide/loader')['default']
     IconLucideSearch: typeof import('~icons/lucide/search')['default']
     IconLucideUser: typeof import('~icons/lucide/user')['default']
+    IconLucideVerified: typeof import('~icons/lucide/verified')['default']
     ProfilePicture: typeof import('./components/profile/Picture.vue')['default']
     ProfileShortcode: typeof import('./components/profile/Shortcode.vue')['default']
     SmartAccentModePicker: typeof import('./components/smart/AccentModePicker.vue')['default']

@@ -39,7 +39,7 @@
         <SmartItem
           :icon="IconGitHub"
           :label="t('app.github')"
-          to="https://hoppscotch.io/github"
+          to="https://github/kuizuo/hoppx"
           blank
           :description="t('support.github')"
           :info-icon="IconChevronRight"

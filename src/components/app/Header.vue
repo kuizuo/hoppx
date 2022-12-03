@@ -26,7 +26,7 @@
           class="rounded hover:bg-primaryDark focus-visible:bg-primaryDark"
           @click="invokeAction('modals.search.toggle')"
         />
-        <ButtonSecondary
+        <!-- <ButtonSecondary
           v-tippy="{ theme: 'tooltip', allowHTML: true }"
           :title="`${
             mdAndLarger ? t('support.title') : t('app.options')
@@ -34,7 +34,7 @@
           :icon="IconLifeBuoy"
           class="rounded hover:bg-primaryDark focus-visible:bg-primaryDark"
           @click="invokeAction('modals.support.toggle')"
-        />
+        /> -->
         <!-- <ButtonSecondary
           v-if="currentUser === null"
           :icon="IconUploadCloud"
@@ -151,7 +151,7 @@ import IconUser from "~icons/lucide/user"
 import IconSettings from "~icons/lucide/settings"
 import IconDownload from "~icons/lucide/download"
 import IconSearch from "~icons/lucide/search"
-import IconLifeBuoy from "~icons/lucide/life-buoy"
+// import IconLifeBuoy from "~icons/lucide/life-buoy"
 // import IconUploadCloud from "~icons/lucide/upload-cloud"
 // import IconUserPlus from "~icons/lucide/user-plus"
 import { breakpointsTailwind, useBreakpoints, useNetwork } from "@vueuse/core"

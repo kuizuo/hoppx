@@ -12,7 +12,7 @@
         >
           <Pane
             style="width: auto; height: auto"
-            class="!overflow-auto hidden md:flex md:flex-col"
+            class="!overflow-auto md:flex md:flex-col"
           >
             <AppSidenav />
           </Pane>
@@ -70,8 +70,8 @@ import { getLocalConfig, setLocalConfig } from "~/store/localpersistence"
 import { useToast } from "~/composables/toast"
 import { useI18n } from "~/composables/i18n"
 
-const settingsStore = useSettingsStore()
 const router = useRouter()
+const settingsStore = useSettingsStore()
 
 const showSearch = ref(false)
 const showSupport = ref(false)
@@ -155,16 +155,8 @@ defineActionHandler("modals.support.toggle", () => {
   showSupport.value = !showSupport.value
 })
 
-defineActionHandler("navigation.jump.rest", () => {
+defineActionHandler("navigation.jump.test", () => {
   router.push({ path: "/" })
-})
-
-defineActionHandler("navigation.jump.graphql", () => {
-  router.push({ path: "/graphql" })
-})
-
-defineActionHandler("navigation.jump.realtime", () => {
-  router.push({ path: "/realtime" })
 })
 
 defineActionHandler("navigation.jump.settings", () => {

@@ -48,6 +48,7 @@ import "splitpanes/dist/splitpanes.css"
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core"
 import { computed, useSlots, ref } from "vue"
 import { useSetting } from "@composables/settings"
+import { setLocalConfig, getLocalConfig } from "~/store/localpersistence"
 
 const SIDEBAR_ON_LEFT = useSetting("SIDEBAR_ON_LEFT")
 
@@ -88,7 +89,7 @@ if (!COLUMN_LAYOUT.value) {
 function setPaneEvent(event: PaneEvent[], type: "vertical" | "horizontal") {
   if (!props.layoutId) return
   const storageKey = `${props.layoutId}-pane-config-${type}`
-  // setLocalConfig(storageKey, JSON.stringify(event))
+  setLocalConfig(storageKey, JSON.stringify(event))
 }
 
 function populatePaneEvent() {
@@ -111,10 +112,9 @@ function populatePaneEvent() {
 
 function getPaneData(type: "vertical" | "horizontal"): PaneEvent[] | null {
   const storageKey = `${props.layoutId}-pane-config-${type}`
-  // const paneEvent = getLocalConfig(storageKey)
-  // if (!paneEvent) return null
-  // return JSON.parse(paneEvent)
-  return null 
+  const paneEvent = getLocalConfig(storageKey)
+  if (!paneEvent) return null
+  return JSON.parse(paneEvent)
 }
 
 populatePaneEvent()

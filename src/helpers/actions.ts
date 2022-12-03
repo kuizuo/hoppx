@@ -11,22 +11,13 @@ export type HoppAction =
   | "request.copy-link" // Copy Request Link
   | "request.save" // Save to Collections
   | "request.save-as" // Save As
-  | "request.method.next" // Select Next Method
-  | "request.method.prev" // Select Previous Method
-  | "request.method.get" // Select GET Method
-  | "request.method.head" // Select HEAD Method
-  | "request.method.post" // Select POST Method
-  | "request.method.put" // Select PUT Method
-  | "request.method.delete" // Select DELETE Method
   | "flyouts.keybinds.toggle" // Shows the keybinds flyout
   | "modals.search.toggle" // Shows the search modal
   | "modals.support.toggle" // Shows the support modal
   | "modals.share.toggle" // Shows the share modal
   | "modals.my.environment.edit" // Edit current personal environment
   | "modals.team.environment.edit" // Edit current team environment
-  | "navigation.jump.rest" // Jump to REST page
-  | "navigation.jump.graphql" // Jump to GraphQL page
-  | "navigation.jump.realtime" // Jump to realtime page
+  | "navigation.jump.test" // Jump to Test page
   | "navigation.jump.documentation" // Jump to documentation page
   | "navigation.jump.settings" // Jump to settings page
   | "navigation.jump.profile" // Jump to profile page
@@ -34,9 +25,6 @@ export type HoppAction =
   | "settings.theme.light" // Use light theme
   | "settings.theme.dark" // Use dark theme
   | "settings.theme.black" // Use black theme
-  | "response.preview.toggle" // Toggle response preview
-  | "response.file.download" // Download response as file
-  | "response.copy" // Copy response to clipboard
 
 /**
  * Defines the arguments, if present for a given type that is required to be passed on
