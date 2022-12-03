@@ -98,7 +98,7 @@
           v-if="navigatorShare"
           v-tippy="{ theme: 'tooltip' }"
           :icon="IconShare2"
-          :title="t('request.share')"
+          :title="t('app.share')"
           @click="nativeShare()"
         />
         <ButtonSecondary
@@ -151,14 +151,12 @@ import IconGithub from "~icons/lucide/github"
 import { defineActionHandler } from "~/helpers/actions"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
-import { useToast } from "~/composables/toast"
 import { useReadonlyStream } from "@composables/stream"
 import { currentUser$ } from "~/helpers/fb/auth"
 import { TippyComponent } from "vue-tippy"
 import SmartItem from "@components/smart/Item.vue"
 
 const t = useI18n()
-const toast = useToast()
 
 const showShortcuts = ref(false)
 const showShare = ref(false)
@@ -190,18 +188,17 @@ watch(
 )
 
 const nativeShare = () => {
-  toast.error(t("request.share_not_supported"))
-  // if (navigator.share) {
-  //   navigator
-  //     .share({
-  //       title: "Hoppx",
-  //       text: "Hoppx",
-  //       url: "https://hoppx.io",
-  //     })
-  //     .catch(console.error)
-  // } else {
-  //   // fallback
-  // }
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Hoppx",
+        text: "Hoppx",
+        url: "https://hoppx.vercel.app",
+      })
+      .catch(console.error)
+  } else {
+    // fallback
+  }
 }
 
 const showDeveloperOptionModal = () => {

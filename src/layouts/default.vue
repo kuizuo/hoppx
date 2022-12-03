@@ -96,23 +96,23 @@ onBeforeMount(() => {
 })
 
 onMounted(() => {
-  const cookiesAllowed = getLocalConfig("cookiesAllowed") === "yes"
-  if (!cookiesAllowed) {
-    toast.show(`${t("app.we_use_cookies")}`, {
+  const followGithub = getLocalConfig("followGithub") === "yes"
+  if (!followGithub) {
+    toast.show(`${t("support.github")}`, {
       duration: 0,
       action: [
         {
-          text: `${t("action.learn_more")}`,
+          text: `${t("action.yes")}`,
           onClick: (_, toastObject) => {
-            setLocalConfig("cookiesAllowed", "yes")
+            setLocalConfig("followGithub", "yes")
             toastObject.goAway(0)
-            window.open("https://docs.hoppscotch.io/privacy", "_blank")?.focus()
+            window.open("https://github.com/kuizuo/hoppx", "_blank")?.focus()
           },
         },
         {
           text: `${t("action.dismiss")}`,
           onClick: (_, toastObject) => {
-            setLocalConfig("cookiesAllowed", "yes")
+            // setLocalConfig("followGithub", "yes")
             toastObject.goAway(0)
           },
         },
