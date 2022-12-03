@@ -83,9 +83,9 @@ export const fuse = [
     tags: ["keyboard", "shortcuts"],
   },
   {
-    keys: [getPlatformAlternateKey(), "T"],
-    label: "shortcut.navigation.test",
-    action: "navigation.jump.test",
+    keys: [getPlatformAlternateKey(), "H"],
+    label: "shortcut.navigation.home",
+    action: "navigation.jump.home",
     icon: IconArrowRight,
     tags: ["rest", "jump", "page", "navigation", "go"],
   },

@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core"
-import IconCat from "~icons/lucide/cat"
+import IconHome from "~icons/lucide/home"
 import IconSettings from "~icons/lucide/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
@@ -42,8 +42,8 @@ const EXPAND_NAVIGATION = useSetting("EXPAND_NAVIGATION")
 const primaryNavigation = [
   {
     target: "/",
-    svg: IconCat,
-    title: "navigation.test",
+    svg: IconHome,
+    title: "navigation.home",
     exact: true,
   },
   {

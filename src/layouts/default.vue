@@ -155,7 +155,7 @@ defineActionHandler("modals.support.toggle", () => {
   showSupport.value = !showSupport.value
 })
 
-defineActionHandler("navigation.jump.test", () => {
+defineActionHandler("navigation.jump.home", () => {
   router.push({ path: "/" })
 })
 

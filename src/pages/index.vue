@@ -1,14 +1,13 @@
 <template>
-  <AppPaneLayout layout-id="http">
+  <AppPaneLayout layout-id="demo">
     <template #primary>
-      <!-- <HttpRequest />
-      <HttpRequestOptions /> -->
+      <DemoPrimary />
     </template>
     <template #secondary>
-      <!-- <HttpResponse /> -->
+      <DemoSecondary />
     </template>
     <template #sidebar>
-      <!-- <HttpSidebar /> -->
+      <DemoSidebar />
     </template>
   </AppPaneLayout>
 </template>

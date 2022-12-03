@@ -17,7 +17,7 @@ export type HoppAction =
   | "modals.share.toggle" // Shows the share modal
   | "modals.my.environment.edit" // Edit current personal environment
   | "modals.team.environment.edit" // Edit current team environment
-  | "navigation.jump.test" // Jump to Test page
+  | "navigation.jump.home" // Jump to Home page
   | "navigation.jump.documentation" // Jump to documentation page
   | "navigation.jump.settings" // Jump to settings page
   | "navigation.jump.profile" // Jump to profile page

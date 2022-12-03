@@ -45,7 +45,7 @@ export const bindings: {
   "/": "modals.search.toggle",
   "?": "modals.support.toggle",
   "ctrl-m": "modals.share.toggle",
-  "alt-t": "navigation.jump.test",
+  "alt-h": "navigation.jump.home",
   "alt-d": "navigation.jump.documentation",
   "alt-m": "navigation.jump.profile",
   "alt-s": "navigation.jump.settings",
