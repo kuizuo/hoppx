@@ -19,7 +19,7 @@
         <SmartItem
           :icon="IconGitHub"
           :label="t('app.github')"
-          to="https://github/kuizuo/hoppx"
+          to="https://github.com/kuizuo/hoppx"
           blank
           :description="t('support.github')"
           :info-icon="IconChevronRight"
